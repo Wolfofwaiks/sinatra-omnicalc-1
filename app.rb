@@ -22,8 +22,13 @@ get ("/square/results") do
 end
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+erb(:homepage)
+end
+
+get ("/square_root/new") do
+  @the_num = params.fetch("users_number").to_f
+
+  @the_result = @the_num ** 2
+
+  erb(:square_results)
 end
