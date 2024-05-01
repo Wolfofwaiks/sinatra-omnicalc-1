@@ -19,13 +19,13 @@ erb(:homepage)
 end
 
 get ("/square_root/new") do
-  erb(:new_square)
+  erb(:square_root)
 end
 
 get ("/square_root/results") do
   @the_num = params.fetch("users_number").to_f
 
-  @the_result = Math.sqrt(@the_num)
+  @the_results = Math.sqrt(@the_num)
 
   erb(:square_root_results)
 end
